@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVT-tutkinto - Etusivu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #6b8e23;
+            color: white;
+            padding: 15px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            min-height: 500px;
+        }
+
+        .sivu {
+            display: none;
+        }
+
+        .sivu.aktiivinen {
+            display: block;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #6b8e23;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        ul {
+            line-height: 1.6;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            float: right;
+            margin-top: -35px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav ul.auki {
+                display: flex;
+            }
+
+            nav li {
+                margin-right: 0;
+                width: 100%;
+            }
+
+            nav a {
+                border-bottom: 1px solid #555;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            table {
+                font-size: 14px;
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tieto- ja viestintätekniikan perustutkinto</h1>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <nav>
+        <ul id="menu">
+            <li><a href="#" onclick="naytaSivu('etusivu')">Etusivu</a></li>
+            <li><a href="#" onclick="naytaSivu('rakenne')">Tutkinnon rakenne</a></li>
+            <li><a href="#" onclick="naytaSivu('osat')">Tutkinnonosat</a></li>
+            <li><a href="#" onclick="naytaSivu('kriteerit')">Kriteerit</a></li>
+            <li><a href="#" onclick="naytaSivu('arviointi')">Arviointi</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="etusivu" class="sivu aktiivinen">
+            <h2>Etusivu</h2>
+            <p>Tervetuloa tutustumaan tieto- ja viestintätekniikan perustutkintoon!</p>
+            
+            <h3>Mitä opit?</h3>
+            <ul>
+                <li>Ohjelmointia (Python, JavaScript, Java)</li>
+                <li>Web-kehitystä (HTML, CSS, JavaScript)</li>
+                <li>Tietokantoja (SQL)</li>
+                <li>Verkkojen toimintaa</li>
+                <li>Tietoturvaa</li>
+                <li>Työelämätaitoja</li>
+            </ul>
+
+            <h3>Työelämään</h3>
+            <p>Valmistut töihin mm. seuraaviin tehtäviin:</p>
+            <ul>
+                <li>Ohjelmistokehittäjä</li>
+                <li>Web-kehittäjä</li>
+                <li>IT-tuki</li>
+                <li>Järjestelmäylläpitäjä</li>
+                <li>Datanomi</li>
+            </ul>
+        </div>
+
+        <div id="rakenne" class="sivu">
+            <h2>Tutkinnon rakenne</h2>
+            <p>Tutkinto koostuu 180 osaamispisteestä.</p>
+
+            <table>
+                <tr>
+                    <th>Oppiaine</th>
+                    <th>Osaamispisteet</th>
+                </tr>
+                <tr>
+                    <td>Äidinkieli</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Ruotsi</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Englanti</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Matematiikka</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Fysiikka ja kemia</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Yhteiskunta- ja työelämätieto</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Liikunta</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Ammatilliset aineet</td>
+                    <td>145</td>
+                </tr>
+                <tr>
+                    <td>Vapaasti valittavat</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <th>Yhteensä</th>
+                    <th>180</th>
+                </tr>
+            </table>
+
+            <h3>Osaamisalat</h3>
+            <ul>
+                <li>Ohjelmistokehittäjä</li>
+                <li>ICT-tukihenkilö</li>
+                <li>Datanomi</li>
+            </ul>
+        </div>
+
+        <div id="osat" class="sivu">
+            <h2>Tutkinnonosat</h2>
+            
+            <h3>Ohjelmistokehittäjä (90 osp)</h3>
+            <ul>
+                <li>Ohjelmiston toteutus - 25 osp</li>
+                <li>Ohjelmiston testaus - 15 osp</li>
+                <li>Ohjelmiston suunnittelu - 20 osp</li>
+                <li>Tietokantojen hyödyntäminen - 15 osp</li>
+                <li>Verkkopalvelut - 15 osp</li>
+            </ul>
+
+            <h3>ICT-tukihenkilö (90 osp)</h3>
+            <ul>
+                <li>Toimitustuki - 25 osp</li>
+                <li>Käyttötuki - 20 osp</li>
+                <li>Järjestelmätuki - 25 osp</li>
+                <li>Verkkotuki - 20 osp</li>
+            </ul>
+
+            <h3>Yhteiset tutkinnon osat (55 osp)</h3>
+            <ul>
+                <li>Työelämässä toimiminen - 15 osp</li>
+                <li>Oman osaamisen kehittäminen - 15 osp</li>
+                <li>Digitaalinen osaaminen - 10 osp</li>
+                <li>Palvelujärjestelmät - 15 osp</li>
+            </ul>
+
+            <h3>Valinnaiset osat</h3>
+            <ul>
+                <li>Mobiilisovellukset - 15 osp</li>
+                <li>Peliohjelmointi - 15 osp</li>
+                <li>Tietoturva - 10 osp</li>
+                <li>Projektinhallinta - 10 osp</li>
+                <li>Yrittäjyys - 10 osp</li>
+            </ul>
+        </div>
+
+        <div id="kriteerit" class="sivu">
+            <h2>Osaamisen arviointikriteerit</h2>
+            
+            <h3>Arviointi tapahtuu asteikolla:</h3>
+            <ul>
+                <li>T1 = Tyydyttävä</li>
+                <li>H2 = Hyvä</li>
+                <li>K3 = Kiitettävä</li>
+            </ul>
+
+            <h3>Arviointitavat</h3>
+            <ul>
+                <li>Käytännön näytöt työpaikalla</li>
+                <li>Projektityöt</li>
+                <li>Tentit ja kokeet</li>
+                <li>Portfoliot</li>
+            </ul>
+
+            <table>
+                <tr>
+                    <th>Osaamisalue</th>
+                    <th>T1</th>
+                    <th>H2</th>
+                    <th>K3</th>
+                </tr>
+                <tr>
+                    <td>Ohjelmointi</td>
+                    <td>Tekee yksinkertaisen ohjelman</td>
+                    <td>Suunnittelee ja tekee toimivan ohjelman</td>
+                    <td>Tekee monimutkaisia ohjelmia itsenäisesti</td>
+                </tr>
+                <tr>
+                    <td>Testaus</td>
+                    <td>Testaa ohjelmaa perustapauksilla</td>
+                    <td>Suunnittelee ja tekee testejä</td>
+                    <td>Tekee kattavat testit ja automatisoi</td>
+                </tr>
+                <tr>
+                    <td>Tietokannat</td>
+                    <td>Käyttää valmiita tauluja</td>
+                    <td>Suunnittelee tietokannan</td>
+                    <td>Optimoi ja hallitsee monimutkaisia rakenteita</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="arviointi" class="sivu">
+            <h2>Arviointi ja palaute</h2>
+            
+            <h3>Miten arvioidaan?</h3>
+            <p>Arviointi on jatkuvaa ja tukee oppimistasi.</p>
+
+            <h3>Arviointitavat:</h3>
+            <ul>
+                <li><strong>Itsearviointi</strong> - pohdit omaa oppimistasi</li>
+                <li><strong>Vertaisarviointi</strong> - saat palautetta muilta opiskelijoilta</li>
+                <li><strong>Opettajan arviointi</strong> - saat ohjausta opettajilta</li>
+            </ul>
+
+            <h3>Periaatteet:</h3>
+            <ul>
+                <li>Arviointi on reilua kaikille</li>
+                <li>Kriteerit ovat selkeät</li>
+                <li>Saat rakentavaa palautetta</li>
+                <li>Voit kehittyä arvioinnin avulla</li>
+            </ul>
+
+            <h3>Todistukset:</h3>
+            <p>Valmistuttuasi saat:</p>
+            <ul>
+                <li>Perustutkinnon todistuksen</li>
+                <li>Europass-liitteen</li>
+                <li>Osaamismerkkejä</li>
+                <li>Ammattisertifikaatteja</li>
+            </ul>
+
+            <h3>Jatko-opinnot:</h3>
+            <p>Voit jatkaa opintojas mm.:</p>
+            <ul>
+                <li>Ammattikorkeakoulussa</li>
+                <li>Yliopistossa (täydennys saattaa tarvita)</li>
+                <li>Erikoistumisopinnoissa</li>
+                <li>Ammattitutkinnoissa</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function naytaSivu(sivuId) {
+            var sivut = document.querySelectorAll('.sivu');
+            for (var i = 0; i < sivut.length; i++) {
+                sivut[i].classList.remove('aktiivinen');
+            }
+            
+            document.getElementById(sivuId).classList.add('aktiivinen');
+        }
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            if (menu.classList.contains('auki')) {
+                menu.classList.remove('auki');
+            } else {
+                menu.classList.add('auki');
+            }
+        }
+    </script>
+</body>
+</html>
